@@ -235,6 +235,11 @@ return [
             'url'  => 'items/tasks',
             'icon' => 'fas fa-gamepad',
         ],
+        [
+            'text' => 'カレンダー',
+            'url'  => 'items/calendar',
+            'icon' => 'fas fa-gamepad',
+        ],
         // AdminLTEデフォルト
         /*
         // Navbar items:

@@ -40,5 +40,8 @@ Route::prefix('items')->group(function () {
     Route::post('/task', [App\Http\Controllers\TaskController::class, 'store'])->name('task');
     Route::delete('/task/{task}', [App\Http\Controllers\TaskController::class, 'destroy'])->name('/task/{task}');
 
+    //カレンダー
+    Route::get('/calendar', [App\Http\Controllers\CalendarController::class,'show']);
+
 
 });
