@@ -230,7 +230,11 @@ return [
             'url'  => 'items',
             'icon' => 'fas fa-gamepad',
         ],
-
+        [
+            'text' => 'TODOリスト',
+            'url'  => 'items/tasks',
+            'icon' => 'fas fa-gamepad',
+        ],
         // AdminLTEデフォルト
         /*
         // Navbar items:
