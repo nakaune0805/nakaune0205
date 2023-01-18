@@ -35,8 +35,17 @@
 
         <div class="card-body">
         <a>種別</a>
-        <input type="text" class="form-control @error('type') is-invalid @enderror" name=type value="{{$item->type}}">
-        </div>
+        <select id="select-pref" class="form-control" name="type">
+          <option value="">- 選択 -</option>
+          @foreach (config('const.type') as $key => $value)
+          @if($key === $item->type)
+          <option value="{{ $key }}" selected>{{ $value }}</option>
+          @else
+          <option value="{{ $key }}">{{ $value }}</option>
+          @endif
+          @endforeach
+        </select>
+      </div>
 
         <div class="card-body">
         <a>詳細</a>

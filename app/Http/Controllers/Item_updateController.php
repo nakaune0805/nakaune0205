@@ -89,7 +89,24 @@ $this->validate($request, [
         $item->type=$request->input('type');
         $item->detail=$request->input('detail');
 
-                return redirect('items');
+        // ディレクトリ名
+        $dir = 'sample';
+        if($request->file('file')){
+            // アップロードされたファイル名を取得
+            $file_name = $request->file('file')->getClientOriginalName();
+
+            // 取得したファイル名で保存
+            $request->file('file')->storeAs('public/' . $dir, $file_name);
+
+            // ファイル情報をDBに保存
+            $item->file = 'storage/' . $dir . '/' . $file_name;
+        }
+
+        //DBに保存
+        $item->save();
+    
+        //処理が終わったらmember/indexにリダイレクト
+        return redirect('items');
     }
 
     /**

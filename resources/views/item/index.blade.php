@@ -26,6 +26,7 @@
                       <input type="submit" value="検索">
                     </form>
                   </div>
+            </div>種別検索する場合は数字で検索をお願いします、1:本、2:食品、3:ファッション、4:生活家電、5:パソコン周辺機器、6:スポーツ・アウトドア、7:ドラッグストア、8:ホーム＆キッチン</div>
                 <div class="card-body table-responsive p-0">
                     <table class="table table-hover text-nowrap">
                         <thead>
@@ -42,7 +43,7 @@
                                 <tr>
                                     <td>{{ $item->id }}</td>
                                     <td>{{ $item->name }}</td>
-                                    <td>{{ $item->type }}</td>
+                                    <td>{{ config('const.type.'.$item->type) }}</td>
                                     <td>{{ $item->detail }}</td>
                                     <td>
                                         <div>

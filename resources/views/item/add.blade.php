@@ -30,7 +30,12 @@
 
                         <div class="form-group">
                             <label for="type">種別</label>
-                            <input type="number" class="form-control" id="type" name="type" placeholder="1, 2, 3, ...">
+                            <select id="select-pref" class="form-control" name="type">
+                                <option value="">- 選択 -</option>
+                                @foreach (config('const.type') as $key => $value)
+                                <option value="{{ $key }}">{{ $value }}</option>
+                                @endforeach
+                              </select>
                         </div>
 
                         <div class="form-group">
