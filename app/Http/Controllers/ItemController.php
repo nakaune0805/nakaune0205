@@ -42,10 +42,10 @@ class ItemController extends Controller
             ::where('items.status', 'active')
             ->select()
             ->get();
+            
 
         return view('item.index', compact('items'));
-    
-       
+
     }
 
 
@@ -62,16 +62,57 @@ class ItemController extends Controller
             ]);
 
             // 商品登録
-            Item::create([
+            $items = Item::create([
                 'user_id' => Auth::user()->id,
                 'name' => $request->name,
                 'type' => $request->type,
                 'detail' => $request->detail,
+                'file' => $request->file,
+                
             ]);
+            
 
             return redirect('/items');
         }
 
         return view('item.add');
     }
+       
+    public function store(Request $request)
+        {
+    
+             //１. バリデーション機能
+             $this->validate($request, [
+                'name' => ['required'],
+                'type' => ['required'],
+                'detail' => ['required'],
+                'image' => ['required'],
+            ]);  
+           
+            $item = new Item();
+            $item->user_id=Auth::id();
+            $item->name = $request->name;
+            $item->type = $request->input('type');
+            $item->detail = $request->detail;
+            
+             // ディレクトリ名
+        $dir = 'sample';
+
+        // アップロードされたファイル名を取得
+        $file_name = $request->file('image')->getClientOriginalName();
+
+        // 取得したファイル名で保存
+        $request->file('image')->storeAs('public/' . $dir, $file_name);
+
+        // ファイル情報をDBに保存
+        $item->file = 'storage/' . $dir . '/' . $file_name;
+
+        
+    $item->save();
+    return redirect('items');
+
+
+    }
 }
+
+

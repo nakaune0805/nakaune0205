@@ -88,7 +88,7 @@ $this->validate($request, [
         $item->name=$request->input('name');
         $item->type=$request->input('type');
         $item->detail=$request->input('detail');
-
+        
         // ディレクトリ名
         $dir = 'sample';
         if($request->file('file')){

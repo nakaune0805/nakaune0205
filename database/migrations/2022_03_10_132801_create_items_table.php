@@ -20,6 +20,7 @@ class CreateItemsTable extends Migration
             $table->string('status', 100)->default('active');
             $table->smallInteger('type')->nullable();
             $table->string('detail', 500)->nullable();
+            $table->string('file',191);// 画像に関する記述
             $table->timestamps();
         });
     }

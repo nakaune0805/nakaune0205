@@ -35,6 +35,7 @@
                                 <th>名前</th>
                                 <th>種別</th>
                                 <th>詳細</th>
+                                <th>画像</th>
                                 <th>編集</th>
                             </tr>
                         </thead>
@@ -45,6 +46,7 @@
                                     <td>{{ $item->name }}</td>
                                     <td>{{ config('const.type.'.$item->type) }}</td>
                                     <td>{{ $item->detail }}</td>
+                                    <td><img src="{{ asset($item->file) }}" width=50 height=50></td>
                                     <td>
                                         <div>
                                             <a href="items/item_update/{{$item->id}}"><button type="button"
@@ -61,6 +63,7 @@
                             @endforeach
                         </tbody>
                     </table>
+                 
                 </div>
             </div>
         </div>

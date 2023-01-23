@@ -20,7 +20,8 @@
             @endif
 
             <div class="card card-primary">
-                <form method="POST">
+                <form method="POST"  enctype="multipart/form-data">
+
                     @csrf
                     <div class="card-body">
                         <div class="form-group">
@@ -43,10 +44,16 @@
                             <input type="text" class="form-control" id="detail" name="detail" placeholder="詳細説明">
                         </div>
                     </div>
-
-                    <div class="card-footer">
-                        <button type="submit" class="btn btn-primary">登録</button>
                     </div>
+                        <div class="form_parts">
+                            <br>
+                            <br>
+                            {{ csrf_field() }}
+                            <input type="file" id="file" name="image" class="form-control">
+                            <button type="submit" class="btn btn-primary">登録</button>
+                           
+                        </div>
+                    </form>
                 </form>
             </div>
         </div>

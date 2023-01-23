@@ -51,7 +51,12 @@
         <a>詳細</a>
         <input type="text" class="form-control @error('text') is-invalid @enderror" name=detail value="{{$item->detail}}">
         </div>
-       
+        <div class="card-body">
+          <input id="file" input type="file"  name="file" value="{{$item->file}}">
+          </div>
+          <div class="card-body">
+          <img src="{{ asset($item->file ) }}"width=50 height=50>
+          </div>
         <div class="btn">
         <button type="submit" class="btn btn-primary">編集</button>
         </div>
