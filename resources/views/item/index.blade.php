@@ -36,7 +36,7 @@
                                 <th>種別</th>
                                 <th>詳細</th>
                                 <th>画像</th>
-                                <th>編集</th>
+                                <th>編集・削除</th>
                             </tr>
                         </thead>
                         <tbody>
