@@ -1,35 +1,34 @@
-## 商品管理システム
+# 商品管理システム
 
-### 環境構築手順
+## 概要
 
-* Gitクローン
-* .env.example をコピーして .env を作成
-* MySQLかPostgreSQLのデータベース作成（名前：item_management）  
-  ローカルでMAMPを使用しているのであれば、MySQL推奨
-* .env にデータベース接続情報追加
-```
-例）
-DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_DATABASE=item_management
-DB_USERNAME=root
-DB_PASSWORD=root
-```
-* APP_KEY生成
-```
-$ php artisan key:generate
-```
-* Composerインストール
-```
-$ composer install
-```
-* フロント環境構築
-```
-$ npm install
-$ npm run dev
-```
-* マイグレーション
-```
-$ php artisan migrate
-```
+このシステムでは、店舗で扱う商品の登録・編集等を行うことができます。
+
+またTODOリスト及びカレンダー機能も使用することができます。
+
+
+## 主な機能
+- ログイン・ログアウト機能
+- 商品一覧画面
+- 商品新規登録・編集・削除機能
+- 商品検索機能
+- TODOリスト機能
+- カレンダー機能
+
+
+## 開発環境
+- PHP7.4。21
+- MYSQL14.14
+- Laravel8.83.3
+
+
+## 設計書
+【設計書ページへ】https://docs.google.com/spreadsheets/d/15UwzlT_1sJr-xrswOyRsGMI9ex9m5SwB/edit?usp=share_link&ouid=111687265231106124029&rtpof=true&sd=true
+
+
+## システム閲覧
+【アプリケーションページへ】https://nakaune0205.herokuapp.com/login
+
+### テストアカウント
+- メールアドレス ： tsuyoshi.nakaune@gmail.com
+- パスワード ： 12345678
